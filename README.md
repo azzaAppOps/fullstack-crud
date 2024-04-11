@@ -1,5 +1,3 @@
-# fullstack-crud
-# fullstack-crud
 Application CRUD réalisée avec Spring Boot 3 et Angular 17
 
 Cette application est composée de 3 parties :
@@ -58,4 +56,5 @@ docker run -d --name mycontainer -p 5432:5432 dbimage
 
 Pour vérifier l'accès à la base de données, vous pouvez utiliser le logiciel DBeaver en créant une nouvelle connexion:
 
-![alt text](image.png)
+![image](https://github.com/azzaAppOps/fullstack-crud/assets/155024106/7bdf0e45-3dad-4f21-8f06-6acfe07540f2)
+
