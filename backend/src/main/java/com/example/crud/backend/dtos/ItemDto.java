@@ -18,15 +18,9 @@ public class ItemDto {
     private Long id;
 
     @NotNull
-    private String brand;
+    private String title;
 
     @NotNull
-    private String model;
-
-    @NotNull
-    private String color;
-
-    @NotNull
-    private int year;
+    private String body;
 
 }

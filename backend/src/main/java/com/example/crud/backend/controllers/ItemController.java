@@ -1,18 +1,19 @@
 package com.example.crud.backend.controllers;
 import com.example.crud.backend.dtos.ItemDto;
+import com.example.crud.backend.services.ItemService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
 public class ItemController {
+    private final ItemService itemService;
+
     @GetMapping("/items")
     public ResponseEntity<List<ItemDto>> allItems() {
         return ResponseEntity.ok(itemService.allItems());
@@ -20,13 +21,13 @@ public class ItemController {
 
     @PostMapping("/items")
     public ResponseEntity<ItemDto> createItem(@Valid @RequestBody ItemDto ItemDto) {
-        ItemDto createdVehicle = itemService.createItem(ItemDto);
-        return ResponseEntity.created(URI.create("/items/" + ItemDto.getId())).body(createdVehicle);
+        ItemDto createdItem = itemService.createItem(ItemDto);
+        return ResponseEntity.created(URI.create("/items/" + ItemDto.getId())).body(createdItem);
     }
 
     @GetMapping("/items/{id}")
     public ResponseEntity<ItemDto> getItem(@PathVariable Long id) {
-        return ResponseEntity.ok(vehicleService.getItem(id));
+        return ResponseEntity.ok(itemService.getItem(id));
     }
 
     @PutMapping("/items/{id}")
