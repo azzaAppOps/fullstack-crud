@@ -1,0 +1,53 @@
+<div class="register-form">
+  <form [formGroup]="form" (ngSubmit)="valider()">
+    <div class="form-group">
+      title
+      <input
+        [(ngModel)]="editPost.title"
+        type="text"
+        formControlName="title"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['title'].errors }"
+      />
+      @if (submitted && f["title"].errors) {
+        <div class="invalid-feedback">
+          @if (f["title"].errors?.["required"]) {
+            <div>title is required</div>
+          }
+        </div>
+      }
+    </div>
+    <div class="form-group">
+      body
+      <input
+        [(ngModel)]="editPost.body"
+        type="text"
+        formControlName="body"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['body'].errors }"
+      />
+      @if (submitted && f["body"].errors) {
+        <div class="invalid-feedback">
+          @if (f["body"].errors?.["required"]) {
+            <div>body is required</div>
+          }
+          @if (f["body"].errors?.["minlength"]) {
+            <div>body must be at least 6 characters</div>
+          }
+          @if (f["body"].errors?.["maxlength"]) {
+            <div>body must not exceed 20 characters</div>
+          }
+        </div>
+      }
+
+      <button type="submit" class="btn btn-primary">save</button>
+      <button
+        type="button"
+        (click)="onReset()"
+        class="btn btn-warning float-right"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</div>

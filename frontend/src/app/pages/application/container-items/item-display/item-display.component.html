@@ -1,0 +1,25 @@
+<div class="form-group">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 fw-normal">
+          {{ paramPost.title }}:{{ paramPost.body }}
+        </h4>
+        <button
+          type="button"
+          class="w-50 btn btn-lg btn-outline-primary"
+          (click)="editItemEvent()"
+        >
+          edit
+        </button>
+        <button
+          type="button"
+          class="w-50 btn btn-lg btn-outline-primary"
+          (click)="removeItemEvent()"
+        >
+          Remove
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

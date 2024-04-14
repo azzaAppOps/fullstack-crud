@@ -36,7 +36,7 @@ Pour démarrer le Frontend, suivez les étapes ci-dessous :
 
 	npm install
 
-	ng serve
+	npm run start
 
 	
 	
