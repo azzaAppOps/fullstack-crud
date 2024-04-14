@@ -22,6 +22,24 @@ Pour démarrer le backend, suivez les étapes ci-dessous :
 
 => Le backend est accessible via l'URL : http://localhost:8080
 
+----------------------------Database (en utilisant Docker)---------------------------- 
+
+Pour créer une base de données locale sans installer aucun SGBD :
+
+-Installer Docker sur Windows.
+
+-Exécuter les commandes suivantes :
+
+cd database
+
+docker build . -f Dockerfile.txt -t dbimage
+
+docker run -d --name mycontainer -p 5432:5432 dbimage
+
+Pour vérifier l'accès à la base de données, vous pouvez utiliser le logiciel DBeaver en créant une nouvelle connexion:
+
+![image](https://github.com/azzaAppOps/fullstack-crud/assets/155024106/7bdf0e45-3dad-4f21-8f06-6acfe07540f2)
+
 
 
 ----------------------------Frontend----------------------------
@@ -45,21 +63,5 @@ Pour démarrer le Frontend, suivez les étapes ci-dessous :
 <img width="927" alt="im3" src="https://github.com/azzaAppOps/fullstack-crud/assets/155024106/90bd852a-a93c-47fe-8415-d73764c9c1a7">
 
 
-----------------------------Database (en utilisant Docker)---------------------------- 
 
-Pour créer une base de données locale sans installer aucun SGBD :
-
--Installer Docker sur Windows.
-
--Exécuter les commandes suivantes :
-
-cd database
-
-docker build . -f Dockerfile.txt -t dbimage
-
-docker run -d --name mycontainer -p 5432:5432 dbimage
-
-Pour vérifier l'accès à la base de données, vous pouvez utiliser le logiciel DBeaver en créant une nouvelle connexion:
-
-![image](https://github.com/azzaAppOps/fullstack-crud/assets/155024106/7bdf0e45-3dad-4f21-8f06-6acfe07540f2)
 
