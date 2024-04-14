@@ -38,7 +38,9 @@ Pour démarrer le Frontend, suivez les étapes ci-dessous :
 
 	npm run start
 
-	
+=>
+<img width="927" alt="im3" src="https://github.com/azzaAppOps/fullstack-crud/assets/155024106/464c2aff-e799-45cc-8e71-d6fe5db31914">
+
 	
 ----------------------------Database (en utilisant Docker)---------------------------- 
 
